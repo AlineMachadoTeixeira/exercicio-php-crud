@@ -1,3 +1,10 @@
+<?php 
+require_once "src/funcoes-alunos.php";
+
+$listaDeAlunos = lerAlunos($conexao);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
