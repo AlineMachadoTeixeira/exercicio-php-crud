@@ -7,13 +7,17 @@ if(isset($_POST['inserir'])){
 		INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
 	
 	$primeira = filter_input(
-		INPUT_POST, "primeira", FILTER_SANITIZE_NUMBER_FLOAT,
+		INPUT_POST, "primeira", 
+		FILTER_SANITIZE_NUMBER_FLOAT,
         FILTER_FLAG_ALLOW_FRACTION);
 
 	$segunda = filter_input(
-		INPUT_POST, "segunda", FILTER_SANITIZE_NUMBER_FLOAT,
+		INPUT_POST, "segunda", 
+		FILTER_SANITIZE_NUMBER_FLOAT,
         FILTER_FLAG_ALLOW_FRACTION);	
 		
+
+		// Na página inserir.php, programe os recursos necessários para fazer INSERT no banco	
 		inserirAluno(
 			$conexao, $nome, $primeira, $segunda);
 }
