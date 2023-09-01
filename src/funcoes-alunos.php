@@ -20,3 +20,34 @@ function lerAlunos (PDO $conexao):array {
 
     return $resultado;
 }
+
+//Na página inserir.php, programe os recursos necessários para fazer INSERT no banco
+
+function  inserirAluno(
+    PDO $conexao,
+    string $nome, 
+    int $primeira, 
+    int $segunda
+):void {
+
+    $sql = "INSERT INTO alunos(nome, primeira, segunda)
+            VALUES(:nome, :primeira, :segunda)";
+
+    try {
+        $consulta = $conexao->prepare($sql);
+
+        $consulta->bindValue(":nome", $nome, PDO::PARAM_STR);
+
+        $consulta->bindValue(":primeira", $primeira, PDO::PARAM_STR);
+
+        $consulta->bindValue(":segunda", $segunda, PDO::PARAM_STR);
+
+        $consulta->execute();
+        
+
+    } catch (Exception $erro) {
+        die("Erro ao inserir: " .$erro->getMessage());
+        
+    }        
+
+} //Fim inserirAlunos

@@ -7,12 +7,15 @@ if(isset($_POST['inserir'])){
 		INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
 	
 	$primeira = filter_input(
-		INPUT_POST, "primeira", FILTER_SANITIZE_NUMBER_INT);
+		INPUT_POST, "primeira", FILTER_SANITIZE_NUMBER_FLOAT,
+        FILTER_FLAG_ALLOW_FRACTION);
 
 	$segunda = filter_input(
-		INPUT_POST, "segunda", FILTER_SANITIZE_NUMBER_INT);
-
+		INPUT_POST, "segunda", FILTER_SANITIZE_NUMBER_FLOAT,
+        FILTER_FLAG_ALLOW_FRACTION);	
 		
+		inserirAluno(
+			$conexao, $nome, $primeira, $segunda);
 }
 
 
@@ -24,14 +27,14 @@ if(isset($_POST['inserir'])){
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cadastrar um novo aluno - Exercício CRUD com PHP e MySQL</title>
-<link href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-<div class="container">
+<div >
 	<h1>Cadastrar um novo aluno </h1>
     <hr>
     		
-    <p>Utilize o formulário abaixo para cadastrar um novo aluno.</p>
+    <p class="paragrafo">Utilize o formulário abaixo para cadastrar um novo aluno.</p>
 
 	<form action="#" method="post">
 	    <p><label for="nome">Nome:</label>
