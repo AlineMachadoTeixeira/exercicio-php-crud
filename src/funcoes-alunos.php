@@ -3,7 +3,7 @@
 require_once "conecta.php";
 
 
-
+// Início lerAlunos
 function lerAlunos (PDO $conexao):array {
     $sql = "SELECT * FROM alunos ORDER BY nome"; 
 
@@ -19,16 +19,18 @@ function lerAlunos (PDO $conexao):array {
     }
 
     return $resultado;
-}
+} //Fim lerAlunos
 
 //Na página inserir.php, programe os recursos necessários para fazer INSERT no banco
 
+
+// Início inserirAlunos
 function  inserirAluno(
     PDO $conexao,
     string $nome, 
     int $primeira, 
     int $segunda
-):void {
+ ):void {
 
     $sql = "INSERT INTO alunos(nome, primeira, segunda)
             VALUES(:nome, :primeira, :segunda)";
@@ -53,7 +55,7 @@ function  inserirAluno(
 } //Fim inserirAlunos
 
 
-
+// Início lerUmAluno
 function lerUmAluno(
     PDO $conexao, 
     int $id,
@@ -70,5 +72,19 @@ function lerUmAluno(
         die("Erro ao carregar dados: ".$erro->getMessage());
     }    
     return $resultado;
-  }//lerUmAluno
+} //lerUmAluno
+
     
+  // Início excluirAluno
+  function excluirAluno(PDO $conexão, int $id):void{
+    $sql = "DELETE FROM alunos WHERE id = :id"; 
+
+   try {
+       $consulta = $conexão->prepare($sql);
+       $consulta->bindValue(":id", $id, PDO::PARAM_INT);
+       $consulta->execute();
+    
+   } catch (Exception $erro) {
+        die ("Erro ao excluir: " .$erro->getMessage());
+   }
+  } // Fim excluirAluno

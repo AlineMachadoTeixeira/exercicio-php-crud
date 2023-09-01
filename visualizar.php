@@ -64,7 +64,7 @@ as páginas de atualização e exclusão. -->
                 <!-- Link dinanmico é o "atualizar.php?id $produto["id"]?>" -->
                 <td class="opcao"><a href="atualizar.php?id=<?=$aluno["id"]?>">Atualizar</a></td>
                 
-                <td class="opcao"><a href="atualizar.php?id=<?=$aluno["id"]?>">Excluir</a></td>
+                <td class="opcao  execluir"><a href="excluir.php">Excluir</a></td>
             </tr>
             <?php       
             }
@@ -79,7 +79,7 @@ as páginas de atualização e exclusão. -->
         </table> 
 
 
-
+<hr>
     <p><a href="index.php">Voltar ao início</a></p>
 </div>
 
