@@ -20,6 +20,10 @@ if(isset($_POST['inserir'])){
 		// Na página inserir.php, programe os recursos necessários para fazer INSERT no banco	
 		inserirAluno(
 			$conexao, $nome, $primeira, $segunda);
+
+    //voltar para pagina visualizar assim que inserir o aluno
+	header("location:visualizar.php");		
+
 }
 
 

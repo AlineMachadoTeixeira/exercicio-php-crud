@@ -51,20 +51,20 @@ as páginas de atualização e exclusão. -->
                 <td><?=$aluno["segunda"]?></td>
 
                 <td>
-                    <?=somarNotas ($aluno["primeira"], $aluno["segunda"])?>
+                    <?=media($aluno["primeira"], $aluno["segunda"])?>
 
                 </td>
 
                 
                 <td>
-                    <?=situacao ($aluno["primeira"], $aluno["segunda"])?>
+                    <?=situacao (media($aluno["primeira"], $aluno["segunda"]))?>
                 </td>
 
                 </td>
-
-                <td class="opcao"><a href="atualizar.php?id=<?=$alunos["id"]?>">Atualizar</a></td>
+                <!-- Link dinanmico é o "atualizar.php?id $produto["id"]?>" -->
+                <td class="opcao"><a href="atualizar.php?id=<?=$aluno["id"]?>">Atualizar</a></td>
                 
-                <td class="opcao"><a href="atualizar.php?id=<?=$alunos["id"]?>">Excluir</a></td>
+                <td class="opcao"><a href="atualizar.php?id=<?=$aluno["id"]?>">Excluir</a></td>
             </tr>
             <?php       
             }

@@ -51,3 +51,24 @@ function  inserirAluno(
     }        
 
 } //Fim inserirAlunos
+
+
+
+function lerUmAluno(
+    PDO $conexao, 
+    int $id,
+    
+    ):array {
+    $sql = "SELECT * FROM alunos WHERE id = :id";
+    try {
+        $consulta = $conexao->prepare($sql);
+        $consulta->bindValue(":id", $id, PDO::PARAM_INT);    
+
+        $consulta->execute();
+        $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+    } catch (Exception $erro) {
+        die("Erro ao carregar dados: ".$erro->getMessage());
+    }    
+    return $resultado;
+  }//lerUmAluno
+    
