@@ -16,7 +16,7 @@ require_once "src/funcoes-utilitarias.php";
 <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-<div class="container">
+
     <h1>Lista de alunos</h1>
     <hr>
     <p><a href="inserir.php">Inserir novo aluno</a></p>
@@ -45,6 +45,7 @@ as páginas de atualização e exclusão. -->
             ?> 
 
             <tr>
+
                 <td><?=$aluno["id"]?></td>
                 <td><?=$aluno["nome"]?></td>
                 <td><?=$aluno["primeira"]?></td>
@@ -60,28 +61,31 @@ as páginas de atualização e exclusão. -->
                     <?=situacao (media($aluno["primeira"], $aluno["segunda"]))?>
                 </td>
 
-                </td>
-                <!-- Link dinanmico é o "atualizar.php?id $produto["id"]?>" -->
-                <td class="opcao"><a href="atualizar.php?id=<?=$aluno["id"]?>">Atualizar</a></td>
                 
-                <td class="opcao  execluir"><a href="excluir.php">Excluir</a></td>
+                <!-- Link dinanmico é o "atualizar.php?id $produto["id"]?>" -->
+                <td class="opcao ">
+                    <a href="atualizar.php?id=<?=$aluno["id"]?>">Atualizar</a>
+                </td>
+                
+                <td class="opcao ">
+                    <a class="excluir" href="excluir.php?id=<?=$aluno["id"]?>">Excluir</a>
+                </td>
+
             </tr>
             <?php       
             }
-            ?> 
-            
-            
-           
-
-        <!-- Fazer a class="excluir" para usar o javascript e precisa fazer o JavaScript-->
-        </td>                
+            ?>        
+                   
 
         </table> 
 
-
-<hr>
+    <hr>
     <p><a href="index.php">Voltar ao início</a></p>
-</div>
+
+    <script src="confirmar-exclusao.js"></script> 
+
+
+
 
 
 </body>

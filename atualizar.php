@@ -28,8 +28,8 @@ if(isset($_POST['atualizar-dados'])){
       	
 
 		// Na página inserir.php, programe os recursos necessários para fazer INSERT no banco	
-		inserirAluno(
-			$conexao, $nome, $primeira, $segunda );
+		atualizarAluno(
+			$conexao, $id, $nome, $primeira, $segunda );
 
     //voltar para pagina visualizar assim que inserir o aluno
 	header("location:visualizar.php");		

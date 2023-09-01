@@ -76,11 +76,11 @@ function lerUmAluno(
 
     
   // Início excluirAluno
-  function excluirAluno(PDO $conexão, int $id):void{
+  function excluirAluno(PDO $conexao, int $id):void{
     $sql = "DELETE FROM alunos WHERE id = :id"; 
 
    try {
-       $consulta = $conexão->prepare($sql);
+       $consulta = $conexao->prepare($sql);
        $consulta->bindValue(":id", $id, PDO::PARAM_INT);
        $consulta->execute();
     
@@ -88,3 +88,32 @@ function lerUmAluno(
         die ("Erro ao excluir: " .$erro->getMessage());
    }
   } // Fim excluirAluno
+
+
+ // Início atualizarAluno
+  function atualizarAluno(
+    PDO $conexao,
+    int $id,
+    string $nome, 
+    int $primeira, 
+    int $segunda):void {
+
+    $sql = "UPDATE alunos SET
+        nome = :nome,
+        primeira = :primeira,
+        segunda = :segunda     
+        WHERE id = :id";
+
+    try {        
+        $consulta = $conexao->prepare($sql);
+        $consulta->bindValue(":id", $id, PDO::PARAM_INT);
+        $consulta->bindValue(":nome", $nome, PDO::PARAM_STR);
+        $consulta->bindValue(":primeira", $primeira, PDO::PARAM_STR);
+        $consulta->bindValue(":segunda", $segunda, PDO::PARAM_STR);             
+       
+        $consulta->execute();
+    } catch (Exception $erro) {
+        die("Erro ao atualizar: ".$erro->getMessage());
+    }   
+} //Fim atualizarAluno
+
