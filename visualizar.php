@@ -44,7 +44,7 @@ as páginas de atualização e exclusão. -->
             foreach ($listaDeAlunos  as $aluno ){       
             ?> 
 
-            <tr>
+            <tr class="<?=situacao (media($aluno["primeira"], $aluno["segunda"]))?>">
 
                 <td><?=$aluno["id"]?></td>
                 <td><?=$aluno["nome"]?></td>
@@ -57,7 +57,7 @@ as páginas de atualização e exclusão. -->
                 </td>
 
                 
-                <td>
+                <td class="<?=situacao (media($aluno["primeira"], $aluno["segunda"]))?>">
                     <?=situacao (media($aluno["primeira"], $aluno["segunda"]))?>
                 </td>
 
