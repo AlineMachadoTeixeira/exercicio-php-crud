@@ -71,6 +71,7 @@ if(isset($_POST['atualizar-dados'])){
             <label for="media">Média:</label>
             <input name="media" type="number" id="media" step="0.01" min="0.00" max="10.00"  value="<?= media($aluno["primeira"], $aluno["segunda"])?>"   readonly disabled>
         </p>
+        <span id="mensagemErro"></span>
 
         <p>
         <!-- Campo somente leitura e desabilitado para edição 
@@ -89,5 +90,6 @@ if(isset($_POST['atualizar-dados'])){
 
 </div>
 
-
+<!-- <script src="js/tempo-real.js"></script> -->
+<script src="js/tempo-real.js"></script>
 </html>

@@ -82,7 +82,7 @@ as páginas de atualização e exclusão. -->
     <hr>
     <p><a href="index.php">Voltar ao início</a></p>
 
-    <script src="confirmar-exclusao.js"></script> 
+    <script src="js/confirmar-exclusao.js"></script> 
 
 
 

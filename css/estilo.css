@@ -1,6 +1,7 @@
 body {
     font-family: "Segoe UI", Arial, sans-serif;   
     
+    
 }
 
 html { 
@@ -74,12 +75,12 @@ th {
     text-align: center;    
 }
 
-/* tr:nth-child(even) {
+ tr:nth-child(even) {
     background-color: #f2f2f2;   
 }
 tr:nth-child(odd) {
     background-color: #ffffff;   
-} */
+} 
 
 .opcao a {
     text-decoration: none;
@@ -144,20 +145,20 @@ button[type="submit"]:hover {
 
 
 .Aprovado{
-    background-color: #dee6e0;
-    color: #447053;
+    /* background-color: #dee6e0; */
+    color: green;
     font-weight: 600;
 }
 
 .Reprovado{
-    background-color: #fcdcd6;
+    /* background-color: #fcdcd6; */
     color: #e60000;
     font-weight: 600;
 }
 
 .Recuperação{
-    background-color: #ffe7d9;
-    color: #db4a00;
+    /* background-color: #ffe7d9; */
+    color: orange;
     font-weight: 600;
 
 }
