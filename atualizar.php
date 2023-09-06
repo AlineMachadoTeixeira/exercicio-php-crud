@@ -91,5 +91,6 @@ if(isset($_POST['atualizar-dados'])){
 </div>
 
 <!-- <script src="js/tempo-real.js"></script> -->
-<script src="js/tempo-real.js"></script>
+<script src="js/tempo-real-professor.js"></script>
+</body>
 </html>
